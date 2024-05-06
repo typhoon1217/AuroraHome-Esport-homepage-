@@ -1,0 +1,83 @@
+
+
+.hed2 h3 {
+  color:var(--color_text1);
+  margin-top: 0;
+  font-size: 50px;
+  color: var(--color_p2);
+  margin-right: 10px;
+}
+.Search_UI{
+    margin-top: 3px;
+    width: 950px;
+    height: 60px;
+    background-color: var(--color_box1);
+    padding:0;
+    border-radius: 50px;
+    border: 3px solid var(--color_p2);
+    text-align: left;
+  }
+  div.search_wrap{
+    margin: 0 autp;
+    padding: 0;
+    height: 60px;
+    width: 1000px;
+  }
+  .btn_sbarea{
+    all: unset;
+    color: var(--color_p2);
+  }
+  #search_field{
+    margin: 0;
+    border: 0;
+  }
+  #search1{
+    border: 0;
+    width: 680px;
+    outline:none;
+    background-color: transparent;
+    font-size: 25px;
+    color: var(--color_p3);
+  }
+/* 최근 검색 구현 시작 */
+.sbarea1_invis {
+  width: 700px;
+  font-size: 20px;
+  margin-top: 3px;
+  padding: 0;
+  text-align: left;
+  border-radius: 50px;
+  
+}
+.recentsearch{
+  list-style: none;
+}
+
+.rec-content {
+  list-style: none;
+  padding: 0;
+  display: flex; /* 가로 배치 설정 */
+  justify-content: space-between;
+  border-radius: 50px;
+  background-color: var(--color_box1);
+  color: var(--color_p3);
+  margin-top: 3px;
+  border: 3px solid var(--color_p2);
+}
+
+.rec-content li {
+  padding: 10px; /* 각 요소의 여백 설정 */
+  align-items: center; /* 요소를 수직 가운데 정렬합니다. */
+  border-bottom: transparent; 
+}
+    
+
+.delete-search {
+  color: var(--color_px);
+}
+
+.delete-search:hover {
+  background-color: rgba(255, 0, 0, 0.2); /* 호버시 배경색 변경 */
+}
+
+    

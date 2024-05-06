@@ -1,0 +1,52 @@
+    .hed3 h3 {
+    color:var(--color_text1);
+    margin-top: 0;
+    font-size: 50px;
+    color: var(--color_p3);
+    margin-right: 10px;
+  }
+
+  .Login_signUp_UI{
+      margin-top: 70px;
+      width: 500px;
+      background-color: var(--color_box2);
+      color:var(--color_textt1);
+      padding: 10px;
+      border-radius: 5px;
+      border: 3px solid var(--color_p3); 
+    input{
+      margin-bottom: 50px;
+      border: 1px solid var(--color_p3); 
+      border-radius: 30px;
+      padding-left: 10px;
+      height: 40px;
+      width: 300px;
+      outline:none;
+      background-color: transparent;
+      font-size: 30px;
+      color: var(--color_p1);
+    }
+    button{
+      background: none;
+      padding: 0;
+      color: var(--color_textt1);
+      font-size: 20px;
+      border: 1px solid var(--color_p2); 
+      padding: 10px;
+      color: var(--color_p3);
+      border-radius: 30px;
+      margin-bottom: 50px;
+    }
+  }
+  .LogIn_UI{
+  }
+  .Signin_UI {
+  }
+
+  button:hover {
+    transform: scale(1.05);
+    transition: transform 0.2s ease;
+  }
+  #signup-error,#login-error{
+    color: var(--color_px); 
+  }FIXFORMAT

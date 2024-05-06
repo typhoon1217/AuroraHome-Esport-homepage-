@@ -1,0 +1,18 @@
+/* .grid-container{
+    width: 100%;
+	display:grid;
+}
+.grid-item{
+    
+  color:var(--color_text1);
+}
+.grid-item:nth-child(2n){
+ background-color: var(--color_px);)
+  background-color: var(--color_t2);
+ 
+}
+.grid-container{
+    display:grid;
+    grid-template-columns:40% 60%;
+    grid: template rows 40% 60%;
+} */

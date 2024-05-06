@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aurora:Overwatch2</title>
+  <!-- font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&family=Ubuntu+Sans:ital,wght@0,100..800;1,100..800&display=swap"
+    rel="stylesheet">
+  <!-- used favicon generator -->
+  <link rel="icon" href="./favicon.png" />
+  <!-- css -->
+  <link rel="stylesheet" href="./css/logo.css" />
+  <link rel="stylesheet" href="./css/side_select.css" />
+  <link rel="stylesheet" href="./css/sidemenu.css" />
+  <link rel="stylesheet" href="./css/sidesearch.css" />
+  <link rel="stylesheet" href="./css/sidelogin.css" />
+  <link rel="stylesheet" href="./css/main.css" />
+  <link rel="stylesheet" href="./css/slideshow.css" />
+  <link rel="stylesheet" href="./css/tabmenu.css" />
+  <link rel="stylesheet" href="./css/bot.css" />
+  <link rel="stylesheet" href="./css/fixedtotop.css" />
+  <link rel="stylesheet" href="./css/notice.css" />
+  <link rel="stylesheet" href="./css/grid.css" />
+  <!-- <link rel="stylesheet" href="./css/contact.css" /> -->
+  <link rel="stylesheet" href="./css/meet_team.css" />
+  <!-- js -->
+  <script src="./js/main.js"></script>
+  <script src="./js/slideshow.js"></script>
+  <script src="./js/tabmenu.js"></script>
+  <script src="./js/sidemenu.js"></script>
+  <script src="./js/fixedtotop.js"></script>
+  <script src="./js/recentsearch.js"></script>
+  <script src="./js/loginsignin.js"></script>
+  <script src="./js/posting.js"></script>
+  <!-- fontawsome -->
+  <script src="https://kit.fontawesome.com/6a2bc27371.js" defer crossorigin="anonymous"></script>
+</head>
+
+<body class="gradient1" onload="call_ss_js()">
+  <div id="wrap">
+    <header id="header">
+      <div class="logo fixedlogo" herf="#">
+      </div>
+    </header>
+
+
+    <div class="head_content">
+      <input type="radio" name="headmenu" id="hed1">
+      <label for="hed1">
+        <section><i class="fa-solid fa-ellipsis"></i></section>
+      </label>
+
+
+      <input type="radio" name="headmenu" id="hed2">
+      <label for="hed2">
+        <section> <i class="fa-solid fa-magnifying-glass"></i></section>
+      </label>
+
+      <input type="radio" name="headmenu" id="hed3" checked>
+      <label for="hed3">
+        <section><i class="fa-regular fa-user"></i></section>
+      </label>
+
+      <input type="radio" name="headmenu" id="hed4" checked>
+      <label for="hed4">
+        <section><i class="fa-solid fa-xmark"></i> </section>
+      </label>
+
+
+      <div class="hedbox hed1">
+        <h3><i class="fa-solid fa-ellipsis"></i> </h3>
+        <div class="Menu_UI">
+          <br>
+          <ul>
+            <!-- 팀 시즌 매치 호버메뉴 트
+              위치 트위터 유튜브 머치 디스코드 호버 이미지 추가 좌측 -->
+            <li><a href="#">Teams</a></li>
+            <li><a href="#">Seasons</a></li>
+            <li><a href="#">Matchs</a></li>
+            <li><a href="#">X(Twitter)</a></li>
+            <li><a href="#">Twitch</a></li>
+            <li><a href="#">Youtube</a></li>
+            <li><a href="./Aurorasop.html">Merch</a></li>
+            <li><a href="#">Discord</a></li>
+            <li><a href="#">Support</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="hedbox hed2">
+        <h3><i class="fas fa-search"></i></h3>
+        <div class="Search_UI">
+          <div class="search_wrap">
+            <form action="#" method="get" id="search-form">
+              <fieldset id="search_field">
+                <div class="sbarea1">
+                  <input type="search" placeholder="Search" id="search1" required>
+                  <button type="button" class="btn_sbarea" onclick="addRecentSearch()">
+                    <i class="fas fa-search"></i></button>
+                </div>
+                <br>
+                <div class="sbarea1_invis">
+                  <ul class="recentsearch" id="recent-search-list">
+                    <!-- js 최근 검색 결과추가-->
+                    <!-- 전체 삭제 기능 추가 (리스트 하나이상 존재시 보여줌) -->
+                  </ul>
+                </div>
+              </fieldset>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="hedbox hed3">
+        <h3><i class="fa-regular fa-user"></i></h3>
+        <div class="Login_signUp_UI">
+          <div id="login-field">
+            <fieldset>
+              <legend>Login</legend>
+              <div class="LogIn_UI" id="login-ui">
+                <div class="SILwarp">
+                  <form id="login-form">
+                    <br>
+                    <input type="email" id="login-email" placeholder="email" required>
+                    <br>
+                    <input type="password" id="login-password" placeholder="pw" required>
+                    <br>
+                    <button type="button" onclick="submitLoginForm()">Login</button>
+                    <button type="button" onclick="showSignup()">SignUp</button>
+
+                    <p id="login-error" class="error-message"></p>
+                  </form>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+          <div id="signup-field" style="display: none;">
+            <fieldset>
+              <legend>Signup</legend>
+              <div class="Signin_UI" id="signup-ui">
+                <div class="SignUp_Wrap">
+                  <div class="SignUp_UI">
+                    <form id="signup-form">
+                      <input type="text" id="signup-username" placeholder="Username" required>
+                      <br>
+                      <input type="email" id="signup-email" placeholder="Email" required>
+                      <br>
+                      <input type="password" id="signup-password" placeholder="Password" required>
+                      <br>
+                      <input type="password" id="signup-confirm-password" placeholder="Confirm Password" required>
+                      <br>
+                      <button type="button" onclick="submitSignupForm()">Sign Up</button>
+                      <button type="button" onclick="showLogin()">Login</button>
+                      <p id="signup-error" class="error-message"></p>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+
+          </div>
+        </div>
+      </div>
+
+
+
+
+    </div>
+    <!-- end of head content -->
+
+
+
+    <div id="top">
+      <div class="slideshow" style="overflow-x: hidden">
+        <div class="slideshow_slides">
+
+          <a href="#" id="slide1">
+            <div class="homeSection top" bis_skin_checked="1">
+              <div class="textBlockLeft" bis_skin_checked="1">
+                <h2 class="headerText" bis_skin_checked="1">Our Mission</h2>
+
+                <div class="paragraphText" bis_skin_checked="1"><span>
+                    <div class="logo logobig"></div>Aurora Esports is a community run organization that strives to
+                    create a
+                    fun and inclusive environment for players of all ranks of Overwatch. Our staff has years of
+                    experience
+                    creating the best possible experience for our members. We run three seasons of our auction league
+                    style
+                    tournament format, Aurora Overwatch Clash, annually and are now looking to expand to monthly
+                    pre-made
+                    team tournaments in the near future. Watch this short video to get a better understanding of what
+                    you
+                    can expect from the Aurora Esports community. From Bronze 5 to Champion 1 all players will have a
+                    place
+                    they feel welcomed and belong. Whether you're a player new to competitive Overwatch or someone just
+                    wanting to make new friends and join a great community, join us today!
+                  </span></div>
+                <br>
+              </div>
+              <div class="videoBlock" bis_skin_checked="1">
+              </div>
+            </div>
+          </a>
+
+          <a href="#" id="slide2">
+            <!-- <div class="content-infor">
+                                                    <div class="content-infor-2">Akua</div>
+                                                    <div class="content-infor-0"><img src="./img/User/Akua.webp" alt="image1"></div>
+                                                    <div class="content-infor-1">NeonCity.Gif</div>
+                                                    <div class="content-infor-2">Typhoon</div>
+                                                    <div class="content-infor-3">2024 12 17</div>
+                            </div>
+                            <div class="content-img">
+                              <div class="content-infor-0"><img src="./img/source.gif" alt="image1"></div>
+                            </div>
+                            <div class="content-img">
+                              <div class="content-infor-0"><img src="./img/83cf152095bdeb24713093606facc72b.gif" alt="image1"></div>
+                              <div class="content-infor-0"><img src="./img/cf2ca4f35eff08e2d8724e2e4b5cdf42.gif" alt="image1"></div>
+                            </div> -->
+          </a>
+
+          <a href="#" id="slide3">
+            <!-- <div class="content-infor">
+                              <div class="content-infor-2">Invictus</div>
+                              <div class="content-infor-0"><img src="./img/Zombie-art-01.png" alt="image1"></div>
+                              <div class="content-infor-1">Zombie.png</div>
+                              <div class="content-infor-2">Chris Harris</div>
+                              <div class="content-infor-3">2012 02 17</div>
+                            </div>
+                            <div class="content-img">
+                              <div class="content-infor-0"><img src="./img/pixel-goust-2.gif" alt="image1"></div>
+                              <div class="content-infor-0"><img src="./img/ice.jpg" alt="image1"></div>
+                            </div>
+                            <div class="content-img">
+                              <div class="content-infor-0"><img src="./img/slide-1.jpg" alt="image1"></div>
+                              <div class="content-infor-0"><img src="./img/slide-2.png" alt="image1"></div>
+                            </div>
+                            <div> -->
+
+
+
+          </a>
+          <a href="#" id="slide4">
+            Test
+          </a>
+
+        </div>
+      </div>
+      <div class="slideshow_nav">
+
+
+        <a href="#" class="prev"><i class="fa-solid fa-chevron-left"></i></a>
+
+        <div class="indicator">
+          <a href="#" class="active"><i class="fa-solid fa-circle-notch"></i></a>
+          <a href="#"><i class="fa-solid fa-circle-notch"></i></a>
+          <a href="#"><i class="fa-solid fa-circle-notch"></i></a>
+          <a href="#"><i class="fa-solid fa-circle-notch"></i></a>
+
+        </div>
+
+        <a href="#" class="next"><i class="fa-solid fa-chevron-right"></i></a>
+
+
+      </div>
+    </div>
+  </div>
+  <div class="tab_content">
+
+    <input type="radio" name="tabmenu" id="tab01" checked>
+    <label for="tab01">Teams</label>
+    <input type="radio" name="tabmenu" id="tab02">
+    <label for="tab02">Schedule</label>
+    <input type="radio" name="tabmenu" id="tab03">
+    <label for="tab03">RuleBook</label>
+    <input type="radio" name="tabmenu" id="tab04">
+    <label for="tab04">About</label>
+    <input type="radio" name="tabmenu" id="tab05">
+    <label for="tab05">Community </label>
+
+    <div class="conbox con1">
+      <div class="grid-container">
+        <div class="grid-item">
+          <div class="grid-container">
+            <div class="grid-item">item-1</div>
+            <div class="grid-item">item-2</div>
+            <div class="grid-item">item-3</div>
+            <div class="grid-item">item-4</div>
+          </div>
+        </div>
+      </div>
+      <div>
+
+      </div>
+    </div>
+    <div class="conbox con2">xcbvxvcbbvxc02</div>
+    <div class="conbox con3">xcbvbxvcxbvc03</div>
+    <div class="conbox con4">
+
+      <h2>Welcome to <div class="logo inlinelogo"></div>Aurora Esports!</h2>
+      <hr>
+      Agrowing eSports organization specializing in Overwatch and League of Legends with thoughts
+      of expanding into other games in the future.
+      <br>
+      Created in 2021 at the University of Minnesota - TC,
+      <br>
+      Aurora Esports has expanded to include national and even worldwide players.
+      <br>
+      Feel free to join our Discord by clicking on the Discord section of the menu and follow our socials. We hope to
+      see
+      you soon!
+      </div>
+      
+      
+      <div class="conbox con5">
+        <div class="noticeTableWrap" id="noticeTableWrap">
+          <div class="noTiceTableLeftdiv">
+              <h2>Notice Board</h2>
+          </div>
+          <table class="noticeTable">
+              <thead>
+                  <tr class="ntdheader">
+                      <td class="ntdnum">Number</td>
+                      <td class="ntbtitle">Title</td>
+                      <td>Author</td>
+                      <td>Date</td>
+                  </tr>
+              </thead>
+              <tbody id="noticeTableBody"></tbody> <!-- Placeholder for dynamically generated table rows -->
+          </table>
+          <div class="noTiceTableLeftdiv ntbButtonLine">
+              <button class="noticeTableButton" onclick="toggleDiv('noticeTableWrap', 'noticePostWrap')">Write</button>
+          </div>
+      </div>
+  
+      <div class="noticePostWrap" id="noticePostWrap">
+          <div class="noTiceTableLeftdiv">
+              <h2>Posting</h2>
+          </div>
+          <form id="postForm">
+              <table class="noticeTable">
+                  <tr>
+                      <td class="ntdheader1">Title</td>
+                  </tr>
+                  <tr>
+                      <td><input type="text" class="ntbinput" placeholder="제목을 입력하세요" name="ntbtitle"></td>
+                  </tr>
+                  <tr>
+                      <td class="ntdheader1">Comment</td>
+                  </tr>
+                  <tr>
+                      <td><textarea class="ntbinput" placeholder="내용을 입력하세요" name="detail"></textarea></td>
+                  </tr>
+              </table>
+              <div class="noTiceTableLeftdiv ntbButtonLine">
+                  <button type="button" class="noticeTableButton" onclick="submitPost()">Write</button>
+              </div>
+          </form>
+      </div>
+      </div> <!-- end of con box5 -->
+    </div>
+      
+      
+      <div class="bottom">
+        <footer class="footer">
+          <div class="footer1">
+            <div class="logo logobig"></div>
+          </div>
+          <div class="footer2">
+        <h4>
+          Aurora E-Sports
+        </h4>
+        <div class="bottom_section">
+          <a class="bot_link mail" href="mailto:viccy5421@wrt.org"><i class="fa-regular fa-envelope"></i></a>
+          <a class="bot_link instagram" href="https://www.instagram.com/viccy5421/"><i
+              class="fa-brands fa-instagram"></i></a>
+          <a class="bot_link facebook" href="https://www.facebook.com/viccy5421"><i
+              class="fa-brands fa-facebook"></i></a>
+          <a class="bot_link youtube" href="https://www.youtube.com/viccy5421"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+
+        <div>
+
+          <p>
+            ©2024 Aurora Esports</p>
+          <p> All trademarks referenced herein are the properties of their respective owners.</p>
+        </div>
+      </div>
+
+    </footer>
+  </div>
+  <div class="tdbtns">
+    <div class="moveTopBtn"><i class="fa-solid fa-angles-up"></i></div>
+    <div class="moveBottomBtn"><i class="fa-solid fa-angles-down"></i></div>
+  </div>
+</body>
+
+</html>

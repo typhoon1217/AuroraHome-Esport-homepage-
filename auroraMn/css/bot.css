@@ -1,0 +1,37 @@
+.footer {
+  display: flex;
+  justify-content: space-around;
+  grid-gap: 10px;
+  text-align: center;
+  margin: 10px;
+  width: 100%;
+  font-size: 30px;
+  text-align: center;
+  color: var(--color_textt1);
+}
+
+.bot_link i {
+  margin: 10px;
+  font-size: 30px;
+  color: var(--color_textt1);
+}
+
+.bot_link i:hover {
+  font-size: 60px;
+}
+
+.bottom_section .mail:hover {
+  color: var(--color_email);
+}
+
+.bottom_section .instagram:hover {
+  color: var(--color_instagram);
+}
+
+.bottom_section .facebook:hover {
+  color: var(--color_twitch);
+}
+
+.bottom_section .youtube:hover {
+  color: var(--color_twitch);
+}

@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PostBoard</title>
+    <style>
+        :root {
+            --color_background0: #000000;
+            /* background-color: var(--color_background0); */
+            --color_background1: #00000080;
+            /* background-color: var(--color_background1); */
+            --color_background2: #3c5aab80;
+            /* background-color: var(--color_background2); */
+            --color_background3: #3c5aab;
+            /* background-color: var(--color_background2); */
+            --color_navsky: #00154e;
+            /* var(--color_navsky); */
+            --color_p1: #ff40c3;
+            /* background-color: var(--color_p1); */
+            --color_p2: #9219fc;
+            /* background-color: var(--color_p2); */
+            --color_p3: #02fbd6;
+            /* background-color: var(--color_p3); */
+            --color_px: #ff2020;
+            /* background-color: var(--color_px); */
+            --color_t1: #ff40c340;
+            /* background-color: var(--color_t1); */
+            --color_t2: #9219fc40;
+            /* background-color: var(--color_t2); */
+            --color_t3: #02fbd640;
+            /* background-color: var(--color_t); */
+            --color_box1: rgba(26, 22, 22, 0.7);
+            /* background-color: var(--color_box1); */
+            --color_box2: rgba(0, 0, 0, 0.7);
+            /* background-color: var(--color_box2); */
+            --color_boxt1: rgba(26, 22, 22, 0.4);
+            /* background-color: var(--color_box1); */
+            --color_boxt2: rgba(0, 0, 0, 0.4);
+            /* background-color: var(--color_box2); */
+            --color_text1: rgb(255, 255, 255);
+            /* color:var(--color_text1); */
+            --color_textt1: rgba(255, 255, 255, 0.5);
+            /* color:var(--color_textt1); */
+            --color_email: rgba(255, 255, 84, 0.745);
+            /* color:var(--color_email); */
+            --color_instagram: rgba(255, 84, 187, 0.745);
+            /* color:var(--color_instagram); */
+            /* .instagram {
+    width:100px; height:100px;
+  background: radial-gradient(circle farthest-corner at 32% 106%,#ffe17d 0%,#ffcd69 10%,#fa9137 28%,#eb4141 42%,transparent 82%) , linear-gradient(135deg,#234bd7 12%,#c33cbe 58%);
+} */
+            /* background:(--color_instagram); */
+            --color_youtube: rgba(84, 98, 255, 0.745);
+            /* color:var(--color_youtube); */
+            --color_twitch: rgba(152, 0, 190, 0.745);
+            /* color:var(--color_twitch); */
+            --color_discord: rgba(101, 74, 255, 0.745);
+            /* color:var(--color_twitch); */
+            --color_twitter: rgba(0, 0, 0, 0.745);
+            /* color:var(--color_twitch); */
+            --color_pass: rgb(82, 255, 96);
+            /* color:var(--color_twitch); */
+            --color_fail: rgb(255, 104, 104);
+            /* color:var(--color_twitch); */
+            /* --img_gradient1:linear-gradient(to bottom left,blue, red);   */
+            --max_width: 100%;
+            /* var(--max_width)  */
+            --min_width: 960px;
+
+            min-width: var(--min_width);
+        }
+        .body{
+            width: 30%;
+            height: 100%;
+        }
+        /* 사이즈 조절용 */
+        /* 여기부터 복사 */
+
+        .noticeTable {
+            margin: auto;
+            width: 100%;
+            background-color: var(--color_box2);
+            color: var(--color_text1);
+            border-collapse: collapse;
+            border-top: none;
+        }
+
+        .ntdheader {
+            background-color: var(--color_p3);
+            text-align: center;
+        }
+
+        .noticeTable td,
+        .noticeTable th {
+            border: 1px solid var(--color_text1);
+            height: 30px;
+            font-size: 14px;
+        }
+
+        .ntdnum {
+            width: 10px;
+        }
+
+        .ntbtitle {
+            width: 80%;
+        }
+
+        .noticeTableWrap {
+            text-align: center;
+        }
+
+        .noticeTableWrap .ntbtitle {
+            text-align: left;
+        }
+
+        .noticeTableButton {
+            width: 70px;
+            height: 40px;
+            font-size: 15px;
+            border: 0;
+            outline: 1.5px var(--color_p2);
+            border-radius: 30px;
+            padding-left: 10px;
+            background-color: var(--color_p1);
+            color: var(--color_text1);
+        }
+
+        .noticeTableButton:active {
+            width: 100px;
+            height: 40px;
+            font-size: 15px;
+            border: 0;
+            border-radius: 5px;
+            padding-left: 10px;
+        }
+
+
+        .noTiceTableLeftdiv {
+            display: flex;
+            align-content: left;
+            align-items: left;
+            text-align: left;
+            color: var(--color_text1);
+            background-color: var(--color_box2);
+        }
+
+        .ntbButtonLine {
+            border-top: 3px solid var(--color_text1);
+            padding: 10px;
+        }
+        .ntbinput{
+            width:60%;
+            background-color: var(--color_p2);
+            color: var(--color_p3);
+        }
+        .noticeTableWrap{
+            display: block;
+        }
+        .noticePostWrap {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="resize">
+        <div class="noticeTableWrap" id="noticeTableWrap">
+            <div class="noTiceTableLeftdiv">
+                <h2>Notice Board</h2>
+            </div>
+            <table class="noticeTable">
+                <thead>
+                    <tr class="ntdheader">
+                        <td class="ntdnum">Number</td>
+                        <td class="ntbtitle">Title</td>
+                        <td>Author</td>
+                        <td>Date</td>
+                    </tr>
+                </thead>
+                <tbody id="noticeTableBody"></tbody> <!-- Placeholder for dynamically generated table rows -->
+            </table>
+            <div class="noTiceTableLeftdiv ntbButtonLine">
+                <button class="noticeTableButton" onclick="toggleDiv('noticeTableWrap', 'noticePostWrap')">Write</button>
+            </div>
+        </div>
+    
+        <div class="noticePostWrap" id="noticePostWrap">
+            <div class="noTiceTableLeftdiv">
+                <h2>Posting</h2>
+            </div>
+            <form id="postForm">
+                <table class="noticeTable">
+                    <tr>
+                        <td class="ntdheader1">Title</td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" class="ntbinput" placeholder="Title" name="ntbtitle"></td>
+                    </tr>
+                    <tr>
+                        <td class="ntdheader1">Comment</td>
+                    </tr>
+                    <tr>
+                        <td><textarea class="ntbinput" placeholder="Content" name="detail"></textarea></td>
+                    </tr>
+                </table>
+                <div class="noTiceTableLeftdiv ntbButtonLine">
+                    <button type="button" class="noticeTableButton" onclick="submitPost()">Write</button>
+                </div>
+            </form>
+        </div>
+    
+        <div class="NoticePost2Wrap" id="NoticePost2Wrap">
+            <div class="noTiceTableLeftdiv">
+                <h2>Post</h2>
+            </div>
+            <form id="postForm">
+                <table class="noticeTable">
+                    <tr>
+                        <th class="ntbtag">Title</th>
+                        <th class="ntbPostTitle"></th>
+                        <td class="ntbtag">Author</td>
+                        <td class="ntbPostAuthor"></td>
+                        <td class="ntbtag">PostDate</td>
+                        <thead class="ntbPostDate"></thead>
+                      </tr>
+                      <tr>
+                        <td class="content" colspan="6"></td>
+                      </tr>
+                </table>
+                <form>
+                    <table class="noticeTable">
+                        <tr>
+                            <th colspan="4">Comments</th>
+                        </tr>
+                        <tr>
+                            <td class="ntdnum">Number</td>
+                            <td class="ntbtitle">Title</td>
+                            <td>Commenter</td>
+                            <td>Date</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4">
+    
+                            </td>
+                        </tr>
+                        
+                    </table>
+                </form>
+            </form>
+        </div>
+    </div>
+
+
+
+    <script>// 포스트한 내용을 저장할 배열
+        let posts = [];
+        
+        // 포스트 제출 함수
+        function submitPost() {
+            let form = document.getElementById("postForm");
+            let title = form.ntbtitle.value;
+            let detail = form.detail.value;
+            let date = new Date().toLocaleString();
+            let author = "Typhoon"; // 작성자
+        
+            // 배열에 포스트 추가
+            posts.unshift({ title: title, detail: detail, date: date, author: author });
+        
+            // 테이블 업데이트
+            updateTable();
+        
+            // 폼 리셋
+            form.reset();
+
+            //토글
+            toggleDiv('noticePostWrap', 'noticeTableWrap')
+
+        }
+        // 테이블 업데이트 함수
+        function updateTable() {
+            let tableBody = document.getElementById("noticeTableBody");
+            tableBody.innerHTML = ""; // 기존 내용 지우기
+        
+            // 포스트를 테이블에 추가
+            posts.forEach(function (post, index) {
+                let row = "<tr class='body'>";
+                row += "<td>" + (index + 1) + "</td>";
+                row += "<td class='ntbtitle'>" + post.title + "</td>";
+                row += "<td>" + post.author + "</td>";
+                row += "<td>" + post.date + "</td>";
+                row += "</tr>";
+                tableBody.innerHTML += row;
+            });
+        }
+        
+        // // 초기 데이터
+        // for (let i = 1; i <= 10; i++) {
+        //     posts.push({ title: "Title " + i, detail: "Detail " + i, date: new Date().toLocaleString(), author: "User" });
+        // }
+        
+        // // 초기 테이블 업데이트
+        // updateTable();
+        // //토글
+        
+
+        function toggleDiv(showID, hideID) {
+            let showDiv = document.getElementById(showID);
+            let hideDiv = document.getElementById(hideID);
+            showDiv.style.display = "none";
+            hideDiv.style.display = "block";
+        }
+    </script>
+
+</body>
+
+</html>

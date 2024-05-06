@@ -1,0 +1,88 @@
+/* div.conbox con5 {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-content: center;
+}
+
+
+div.contactcard {
+  border-radius: 300px;
+  font-size: 0.8em;
+  margin:10px;
+}
+div.contactcard a {
+  display: none;
+}
+
+div.contactbox{
+  width: 800px;
+  border-radius: 30px;
+  font-size: 35px;
+  text-align: center;
+  background-color:var(--color_background2);
+  background: cover;
+  text-align: center;
+  margin: 10px;
+}
+
+div.contactcard:hover   p {
+    display:none;
+
+}
+div.contactcard:hover   a {
+  display:contents;
+  color: rgba(255, 255, 255, 0.482);
+}
+
+div.contact-list > p{
+  padding-top:20px ;
+  text-align: center;
+  justify-content: center;
+}
+#contactcard1 {
+  background-image: url(../img/0w8k67nd28971.gif);
+  background-size: cover;
+}
+
+#contactcard2 {
+  background-image: linear-gradient(to top left, blue, rgb(0, 255, 106));
+}
+
+#contactcard3 {
+  background-image: linear-gradient(to top left, green, YELLOW);
+}
+
+#contactcard4 {
+  background-image: linear-gradient(to top left, red, YELLOW);
+}
+
+#contactcard5 {
+  background-image: linear-gradient(to top left, blue, green);
+}
+
+#contactcard6 {
+  background-image: linear-gradient(to top left, blue, red);
+}
+
+#contactcard7 {
+  background-image: linear-gradient(to top left, red, YELLOW);
+}
+
+
+#contactcard8 {
+  background-image: url(../img/83cf152095bdeb24713093606facc72b.gif);
+  background-size: cover;
+}
+
+
+
+#contactcard9 {
+  background-image: url(../img/hello\ \(1\).gif);
+  background-size: cover;
+}
+
+#contactcard10 {
+  background-image: url(../img/tumblr_naijtnYkeu1qhccbco1_1280.gif);
+  background-size: cover;
+} */

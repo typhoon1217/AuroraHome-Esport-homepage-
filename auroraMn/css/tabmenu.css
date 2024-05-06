@@ -1,0 +1,82 @@
+.tab_content {
+  
+  min-width: var(--min_width);
+  margin-left: 5%;
+  font-size: 0;
+}
+
+.tab_content > input[type="radio"] {
+  display: none;
+}
+.tab_content > input[type="radio"] + label {
+  margin: 0 0;
+  text-align: center;
+  width: 17%;
+  height: 30px;
+  display: inline-block;
+  background: rgba(255, 169, 169, 0.5);
+  color: rgba(226, 226, 226, 0.479);
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.tab_content > input[type="radio"]:hover + label {
+  font-size: 40px;
+  height: 60px;
+  background: var(--color_p2);
+  color: rgb(226, 226, 226);
+}
+
+.tab_content > input[type="radio"]:checked + label {
+  font-size: 40px;
+  width: 27%;
+  height: 60px;
+  background: rgba(0, 0, 0, 0.5);
+  color: rgb(255, 255, 255);
+}
+
+.tab_content > div.conbox {
+  width: 95%;
+  height: auto;
+  background: rgba(0, 0, 0, 0.5);
+  margin: 0 0px;
+  display: none;
+  text-align: left;
+  font-size: 32px;
+  padding: 3%;
+  box-sizing: border-box;
+  animation: slideIn 0.5s;
+  color: aliceblue;
+}
+.conbox > .coonterctcard {
+  background-image: radial-gradient(
+      circle,
+      rgba(80, 8, 8, 0.5),
+      rgba(0, 0, 0, 0.5)
+    )
+}
+
+.tab_content > input[id="tab01"]:checked ~ .con1 {
+  display: block;
+}
+.tab_content > input[id="tab02"]:checked ~ .con2 {
+  display: block;
+}
+.tab_content > input[id="tab03"]:checked ~ .con3 {
+  display: block;
+}
+.tab_content > input[id="tab04"]:checked ~ .con4 {
+  display: block;
+}
+.tab_content > input[id="tab05"]:checked ~ .con5 {
+  display: block;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}

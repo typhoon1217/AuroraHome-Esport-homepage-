@@ -1,0 +1,32 @@
+.tdbtns {
+  position: fixed;
+  bottom: 0px;
+  right: 20px;
+  transform: translateY(-50%);
+  z-index: 4;
+  border-radius: 50%;
+  color: var(--color_box1);
+  background-color: var(--color_textt1);
+  
+  width: 60px;
+  height: 60px;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 20px;
+  margin-bottom: 10px;
+  transition: width 0.3s, height 0.3s, font-size 0.3s;
+}
+
+.moveTopBtn:hover,
+.moveBottomBtn:hover {
+  font-size: 30px;
+  color: var(--color_textt1);
+  /* .tdbtns {
+    background-color: var(--color_box1);
+  } */
+  /* 되나? */
+} 
+

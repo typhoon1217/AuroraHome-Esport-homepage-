@@ -1,0 +1,94 @@
+
+
+
+.head_content {
+    height: 60px;
+    padding: 0px;
+    z-index: 5;
+    position: fixed;
+    right: 0vw;
+    top: -0px;
+    color:var(--color_text2);
+    display: flex;
+    z-index: 5;
+  }
+  .head_content > input[id="hed1"]+ label {
+    color: var(--color_p1);
+  }
+  .head_content > input[id="hed2"]+ label {
+    color: var(--color_p2);
+  }
+  .head_content > input[id="hed3"]+ label {
+    color: var(--color_p3);
+  }
+  .head_content > input[id="hed4"]+ label {
+    color: var(--color_px);
+  }
+  
+  .head_content > div.hedbox { 
+    
+    font-size: 30px;
+    position: absolute;
+    right:-150vw;
+    width: 120vw;
+    height: 120vw;
+    background: var(--color_boxt2);
+    text-align: center;
+    display: flex;
+    justify-content: right;
+    z-index: -1;
+  }
+  .head_content > div.hed3 { 
+    justify-content: center;
+  }
+  
+  .head_content > input[type="radio"] {
+    display: none;
+  }
+  
+  .head_content > label > section{
+    font-size: 30px;
+    width: 40px;
+    height: 40px;
+    background-color: var(--color_background2);
+    border: 3px solid var(--color_background1);
+    margin: 10px;
+    border-radius: 60px;
+    text-align: center;
+  }
+  
+  .head_content > input[type="radio"]:hover + label {
+    section{
+    background-color: transparent;
+    color: var(--color_textt1);
+    border: transparent;
+    }
+  }
+
+  .head_content > input[type="radio"]:checked + label {
+    section{
+    /* background-color: var(--color_background1);
+    right:50vw;
+    width: 0px;
+    height: 0px;
+    padding: 0px;
+    margin: 0px;
+    font-size: 0px;
+    border: 0px;
+    color: transparent; */
+    display: none;
+    }
+  }
+
+  
+  .head_content > input[id="hed1"]:checked ~ .hed1 {
+    right:-1vw;
+  }
+  .head_content > input[id="hed2"]:checked ~ .hed2 {
+    right:-1vw;
+  }
+  .head_content > input[id="hed3"]:checked ~ .hed3{
+    right:-1vw;
+  }
+  
+  

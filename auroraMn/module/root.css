@@ -1,0 +1,65 @@
+:root {
+    --color_background0: #000000;
+    /* background-color: var(--color_background0); */
+    --color_background1: #00000080;
+    /* background-color: var(--color_background1); */
+    --color_background2: #3c5aab80;
+    /* background-color: var(--color_background2); */
+    --color_background3: #3c5aab;
+    /* background-color: var(--color_background2); */
+    --color_navsky: #00154e;
+    /* var(--color_navsky); */
+    --color_p1: #ff40c3;
+    /* background-color: var(--color_p1); */
+    --color_p2: #9219fc;
+    /* background-color: var(--color_p2); */
+    --color_p3: #02fbd6;
+    /* background-color: var(--color_p3); */
+    --color_px: #ff2020;
+    /* background-color: var(--color_px); */
+    --color_t1: #ff40c340;
+    /* background-color: var(--color_t1); */
+    --color_t2: #9219fc40;
+    /* background-color: var(--color_t2); */
+    --color_t3: #02fbd640;
+    /* background-color: var(--color_t); */
+    --color_box1: rgba(26, 22, 22, 0.7);
+    /* background-color: var(--color_box1); */
+    --color_box2: rgba(0, 0, 0, 0.7);
+    /* background-color: var(--color_box2); */
+    --color_boxt1: rgba(26, 22, 22, 0.4);
+    /* background-color: var(--color_box1); */
+    --color_boxt2: rgba(0, 0, 0, 0.4);
+    /* background-color: var(--color_box2); */
+    --color_text1: rgb(255, 255, 255);
+    /* color:var(--color_text1); */
+    --color_textt1: rgba(255, 255, 255, 0.5);
+    /* color:var(--color_textt1); */
+    --color_email: rgba(255, 255, 84, 0.745);
+    /* color:var(--color_email); */
+    --color_instagram: rgba(255, 84, 187, 0.745);
+    /* color:var(--color_instagram); */
+    /* .instagram {
+width:100px; height:100px;
+background: radial-gradient(circle farthest-corner at 32% 106%,#ffe17d 0%,#ffcd69 10%,#fa9137 28%,#eb4141 42%,transparent 82%) , linear-gradient(135deg,#234bd7 12%,#c33cbe 58%);
+} */
+    /* background:(--color_instagram); */
+    --color_youtube: rgba(84, 98, 255, 0.745);
+    /* color:var(--color_youtube); */
+    --color_twitch: rgba(152, 0, 190, 0.745);
+    /* color:var(--color_twitch); */
+    --color_discord: rgba(101, 74, 255, 0.745);
+    /* color:var(--color_twitch); */
+    --color_twitter: rgba(0, 0, 0, 0.745);
+    /* color:var(--color_twitch); */
+    --color_pass: rgb(82, 255, 96);
+    /* color:var(--color_twitch); */
+    --color_fail: rgb(255, 104, 104);
+    /* color:var(--color_twitch); */
+    /* --img_gradient1:linear-gradient(to bottom left,blue, red);   */
+    --max_width: 100%;
+    /* var(--max_width)  */
+    --min_width: 960px;
+
+    min-width: var(--min_width);
+}

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="./root.css">
+    <style>
+        .tab_content {
+
+            min-width: var(--min_width);
+            margin-left: 5%;
+            font-size: 0;
+        }
+
+        .tab_content>input[type="radio"] {
+            display: none;
+        }
+
+        .tab_content>input[type="radio"]+label {
+            margin: 0 0;
+            text-align: center;
+            width: 17%;
+            height: 30px;
+            display: inline-block;
+            background: rgba(255, 169, 169, 0.5);
+            color: rgba(226, 226, 226, 0.479);
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .tab_content>input[type="radio"]:hover+label {
+            font-size: 40px;
+            height: 60px;
+            background: var(--color_p2);
+            color: rgb(226, 226, 226);
+        }
+
+        .tab_content>input[type="radio"]:checked+label {
+            font-size: 40px;
+            width: 27%;
+            height: 60px;
+            background: rgba(0, 0, 0, 0.5);
+            color: rgb(255, 255, 255);
+        }
+
+        .tab_content>div.conbox {
+            width: 95%;
+            height: auto;
+            background: rgba(0, 0, 0, 0.5);
+            margin: 0 0px;
+            display: none;
+            text-align: left;
+            font-size: 32px;
+            padding: 3%;
+            box-sizing: border-box;
+            animation: slideIn 0.5s;
+            color: aliceblue;
+        }
+
+        .conbox>.coonterctcard {
+            background-image: radial-gradient(circle,
+                    rgba(80, 8, 8, 0.5),
+                    rgba(0, 0, 0, 0.5))
+        }
+
+        .tab_content>input[id="tab01"]:checked~.con1 {
+            display: block;
+        }
+
+        .tab_content>input[id="tab02"]:checked~.con2 {
+            display: block;
+        }
+
+        .tab_content>input[id="tab03"]:checked~.con3 {
+            display: block;
+        }
+
+        .tab_content>input[id="tab04"]:checked~.con4 {
+            display: block;
+        }
+
+        .tab_content>input[id="tab05"]:checked~.con5 {
+            display: block;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(-100%);
+            }
+
+            to {
+                transform: translateX(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="tab_content">
+
+        <input type="radio" name="tabmenu" id="tab01" checked>
+        <label for="tab01">Teams</label>
+        <input type="radio" name="tabmenu" id="tab02">
+        <label for="tab02">Schedule</label>
+        <input type="radio" name="tabmenu" id="tab03">
+        <label for="tab03">RuleBook</label>
+        <input type="radio" name="tabmenu" id="tab04">
+        <label for="tab04">About</label>
+        <input type="radio" name="tabmenu" id="tab05">
+        <label for="tab05">Community </label>
+
+        <div class="conbox con1">
+            <div class="grid-container">
+                <div class="grid-item">
+                    <div class="grid-container">
+                        <div class="grid-item">item-1</div>
+                        <div class="grid-item">item-2</div>
+                        <div class="grid-item">item-3</div>
+                        <div class="grid-item">item-4</div>
+                    </div>
+                </div>
+            </div>
+            <div>
+
+            </div>
+        </div>
+        <div class="conbox con2">xcbvxvcbbvxc02</div>
+        <div class="conbox con3">xcbvbxvcxbvc03</div>
+        <div class="conbox con4">
+
+            <h2>Welcome to <div class="logo inlinelogo"></div>Aurora Esports!</h2>
+            <hr>
+            Agrowing eSports organization specializing in Overwatch and League of Legends with thoughts
+            of expanding into other games in the future.
+            <br>
+            Created in 2021 at the University of Minnesota - TC,
+            <br>
+            Aurora Esports has expanded to include national and even worldwide players.
+            <br>
+            Feel free to join our Discord by clicking on the Discord section of the menu and follow our socials. We hope
+            to
+            see
+            you soon!
+        </div>
+
+
+        <div class="conbox con5">
+            <div class="noticeTableWrap" id="noticeTableWrap">
+                <div class="noTiceTableLeftdiv">
+                    <h2>Notice Board</h2>
+
+              ddd
+            </div>
+        </div> <!-- end of con box5 -->
+    </div>
+</body>
+
+</html>

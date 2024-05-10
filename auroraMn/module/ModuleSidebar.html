@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="./root.css">
+    <script src="https://kit.fontawesome.com/6a2bc27371.js" defer crossorigin="anonymous"></script>
+    <script>
+        function showLogin() {
+            document.getElementById("login-field").style.display = "block";
+            document.getElementById("signup-field").style.display = "none";
+        }
+
+        function showSignup() {
+            document.getElementById("login-field").style.display = "none";
+            document.getElementById("signup-field").style.display = "block";
+        }
+
+        function submitLoginForm() {
+            let LEmail = document.getElementById("login-email").value;
+            let SPassword = document.getElementById("login-password").value;
+            if (!validateLoginForm(LEmail, SPassword)) {
+                return;
+            }
+            document.getElementById("login-form").submit();
+        }
+
+        function submitSignupForm() {
+            let sUsername = document.getElementById("signup-username").value;
+            let SEmail = document.getElementById("signup-email").value;
+            let SPassword = document.getElementById("signup-password").value;
+            let confirmPassword = document.getElementById("signup-confirm-password").value;
+
+            if (!validateSignupForm(sUsername, SEmail, SPassword, confirmPassword)) {
+                return;
+            }
+            document.getElementById("signup-form").submit();
+        }
+
+        function loadStyles(url) {
+            document.getElementById("styles").href = url;
+        }
+
+        function validateLoginForm(LEmail, LPassword) {
+            // Check if email and password are empty
+            if (LEmail.trim() === "" || LPassword.trim() === "") {
+                document.getElementById("login-error").innerText =
+                    "Please enter both email and password."; // 이메일과 비밀번호를 모두 입력해주세요.
+                return false;
+            }
+            // Validate email format
+            let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(LEmail)) {
+                document.getElementById("login-error").innerText =
+                    "Please enter a valid email addess."; // 이메일 주소를 올바르게 입력해주세요.
+                return false;
+            }
+
+            let passwordRegex =
+                /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/;
+            if (!passwordRegex.test(LPassword)) {
+                document.getElementById("login-error").innerText =
+                    "Password must contain at least one lowercase letter, one uppercase letter, one digit, one special character, and be at least 6 characters long."; // 비밀번호는 영어, 숫자, 특수문자, 대문자를 모두 포함하고 6자리 이상이어야 합니다.
+                return false;
+            }
+            // Reset error message if validation passes
+
+            document.getElementById("login-error").innerText = "pass";
+            document.getElementById("login-form").submit();
+            return true;
+        }
+
+        function validateSignupForm(sUsername, SEmail, SPassword, confirmPassword) {
+            // Check if any field is empty
+            if (
+                sUsername.trim() === "" ||
+                SEmail.trim() === "" ||
+                SPassword.trim() === "" ||
+                confirmPassword.trim() === ""
+            ) {
+                document.getElementById("signup-error").innerText =
+                    "Please fill in all fields."; // 모든 필드를 입력해주세요.
+                return false;
+            }
+            // Validate email format
+            let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(SEmail)) {
+                document.getElementById("signup-error").innerText =
+                    "Please enter a valid email format."; // 올바른 이메일 형식이 아닙니다.
+                return false;
+            }
+            // Check if password and confirm password match
+            if (SPassword !== confirmPassword) {
+                document.getElementById("signup-error").innerText =
+                    "Password and confirm password do not match."; // 비밀번호와 비밀번호 확인이 일치하지 않습니다.
+                return false;
+            }
+            // Validate password (must contain at least one lowercase letter, one uppercase letter, one digit, one special character, and be at least 6 characters long)
+            let passwordRegex =
+                /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/;
+            if (!passwordRegex.test(SPassword)) {
+                document.getElementById("signup-error").innerText =
+                    "Password must contain at least one lowercase letter, one uppercase letter, one digit, one special character, and be at least 6 characters long."; // 비밀번호는 영어, 숫자, 특수문자, 대문자를 모두 포함하고 6자리 이상이어야 합니다.
+                return false;
+            }
+            // Reset error message if validation passes
+
+            document.getElementById("signup-error").innerText = "pass";
+            document.getElementById("signup-form").submit();
+            return true;
+        }
+
+    </script>
+    <style>
+
+        * {
+            transition: all 0.5s;
+            font-family: "Ubuntu Sans", sans-serif;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-weight: 400;
+        }
+
+        /* select */
+
+
+        .head_content {
+            height: 60px;
+            padding: 0px;
+            z-index: 5;
+            position: fixed;
+            right: 0vw;
+            top: -0px;
+            color: var(--color_text2);
+            display: flex;
+            z-index: 5;
+        }
+
+        .head_content>input[id="hed1"]+label {
+            color: var(--color_p1);
+        }
+
+        .head_content>input[id="hed2"]+label {
+            color: var(--color_p2);
+        }
+
+        .head_content>input[id="hed3"]+label {
+            color: var(--color_p3);
+        }
+
+        .head_content>input[id="hed4"]+label {
+            color: var(--color_px);
+        }
+
+        .head_content>div.hedbox {
+
+            font-size: 30px;
+            position: absolute;
+            right: -150vw;
+            width: 120vw;
+            height: 120vw;
+            background: var(--color_boxt2);
+            text-align: center;
+            display: flex;
+            justify-content: right;
+            z-index: -1;
+        }
+
+        .head_content>div.hed3 {
+            justify-content: center;
+        }
+
+        .head_content>input[type="radio"] {
+            display: none;
+        }
+
+        .head_content>label>section {
+            font-size: 30px;
+            width: 40px;
+            height: 40px;
+            background-color: var(--color_background2);
+            border: 3px solid var(--color_background1);
+            margin: 10px;
+            border-radius: 60px;
+            text-align: center;
+        }
+
+        .head_content>input[type="radio"]:hover+label {
+            section {
+                background-color: transparent;
+                color: var(--color_textt1);
+                border: transparent;
+            }
+        }
+
+        .head_content>input[type="radio"]:checked+label {
+            section {
+                /* background-color: var(--color_background1);
+    right:50vw;
+    width: 0px;
+    height: 0px;
+    padding: 0px;
+    margin: 0px;
+    font-size: 0px;
+    border: 0px;
+    color: transparent; */
+                display: none;
+            }
+        }
+
+
+        .head_content>input[id="hed1"]:checked~.hed1 {
+            right: -1vw;
+        }
+
+        .head_content>input[id="hed2"]:checked~.hed2 {
+            right: -1vw;
+        }
+
+        .head_content>input[id="hed3"]:checked~.hed3 {
+            right: -1vw;
+        }
+
+        /* menu */
+
+        .hed1 h3 {
+            color: var(--color_text1);
+            margin-top: 0;
+            font-size: 50px;
+            color: var(--color_p1);
+            margin-right: 10px;
+        }
+
+        /* color: rgb(255, 91, 91); */
+
+
+
+        .Menu_UI {
+            width: 200px;
+            background-color: var(--color_box2);
+            padding: 10px;
+            border-radius: 5px;
+            border: 3px solid var(--color_p1);
+        }
+
+        .Menu_UI ul {
+            font-size: 40px;
+            color: var(--color_textt1);
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .Menu_UI ul li {
+            padding: 5px 0;
+            cursor: pointer;
+        }
+
+        .Menu_UI ul li:hover {
+            background-color: var(--color_p1);
+            border-radius: 20px;
+            color: var(--color_text1);
+            font-size: 50px;
+        }
+
+        /* search */
+
+
+        .hed2 h3 {
+            color: var(--color_text1);
+            margin-top: 0;
+            font-size: 50px;
+            color: var(--color_p2);
+            margin-right: 10px;
+        }
+
+        .Search_UI {
+            margin-top: 3px;
+            width: 950px;
+            height: 60px;
+            background-color: var(--color_box1);
+            padding: 0;
+            border-radius: 50px;
+            border: 3px solid var(--color_p2);
+            text-align: left;
+        }
+
+        div.search_wrap {
+            margin: 0 autp;
+            padding: 0;
+            height: 60px;
+            width: 1000px;
+        }
+
+        .btn_sbarea {
+            all: unset;
+            color: var(--color_p2);
+        }
+
+        #search_field {
+            margin: 0;
+            border: 0;
+        }
+
+        #search1 {
+            border: 0;
+            width: 680px;
+            outline: none;
+            background-color: transparent;
+            font-size: 25px;
+            color: var(--color_p3);
+        }
+
+        /* 최근 검색 구현 시작 */
+        .sbarea1_invis {
+            width: 700px;
+            font-size: 20px;
+            margin-top: 3px;
+            padding: 0;
+            text-align: left;
+            border-radius: 50px;
+
+        }
+
+        .recentsearch {
+            list-style: none;
+        }
+
+        .rec-content {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            /* 가로 배치 설정 */
+            justify-content: space-between;
+            border-radius: 50px;
+            background-color: var(--color_box1);
+            color: var(--color_p3);
+            margin-top: 3px;
+            border: 3px solid var(--color_p2);
+        }
+
+        .rec-content li {
+            padding: 10px;
+            /* 각 요소의 여백 설정 */
+            align-items: center;
+            /* 요소를 수직 가운데 정렬합니다. */
+            border-bottom: transparent;
+        }
+
+
+        .delete-search {
+            color: var(--color_px);
+        }
+
+        .delete-search:hover {
+            background-color: rgba(255, 0, 0, 0.2);
+            /* 호버시 배경색 변경 */
+        }
+
+        /* login */
+        .hed3 h3 {
+            color: var(--color_text1);
+            margin-top: 0;
+            font-size: 50px;
+            color: var(--color_p3);
+            margin-right: 10px;
+        }
+
+        .Login_signUp_UI {
+            margin-top: 70px;
+            width: 500px;
+            background-color: var(--color_box2);
+            color: var(--color_textt1);
+            padding: 10px;
+            border-radius: 5px;
+            border: 3px solid var(--color_p3);
+
+            input {
+                margin-bottom: 50px;
+                border: 1px solid var(--color_p3);
+                border-radius: 30px;
+                padding-left: 10px;
+                height: 40px;
+                width: 300px;
+                outline: none;
+                background-color: transparent;
+                font-size: 30px;
+                color: var(--color_p1);
+            }
+
+            button {
+                background: none;
+                padding: 0;
+                color: var(--color_textt1);
+                font-size: 20px;
+                border: 1px solid var(--color_p2);
+                padding: 10px;
+                color: var(--color_p3);
+                border-radius: 30px;
+                margin-bottom: 50px;
+            }
+        }
+
+        .LogIn_UI {}
+
+        .Signin_UI {}
+
+        button:hover {
+            transform: scale(1.05);
+            transition: transform 0.2s ease;
+        }
+
+        #signup-error,
+        #login-error {
+            color: var(--color_px);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="head_content">
+        <input type="radio" name="headmenu" id="hed1">
+        <label for="hed1">
+            <section><i class="fa-solid fa-ellipsis"></i></section>
+        </label>
+
+
+        <input type="radio" name="headmenu" id="hed2">
+        <label for="hed2">
+            <section> <i class="fa-solid fa-magnifying-glass"></i></section>
+        </label>
+
+        <input type="radio" name="headmenu" id="hed3" checked>
+        <label for="hed3">
+            <section><i class="fa-regular fa-user"></i></section>
+        </label>
+
+        <input type="radio" name="headmenu" id="hed4" checked>
+        <label for="hed4">
+            <section><i class="fa-solid fa-xmark"></i> </section>
+        </label>
+
+
+        <div class="hedbox hed1">
+            <h3><i class="fa-solid fa-ellipsis"></i> </h3>
+            <div class="Menu_UI">
+                <br>
+                <ul>
+                    <!-- 팀 시즌 매치 호버메뉴 트
+                위치 트위터 유튜브 머치 디스코드 호버 이미지 추가 좌측 -->
+                    <li><a href="#">Teams</a></li>
+                    <li><a href="#">Seasons</a></li>
+                    <li><a href="#">Matchs</a></li>
+                    <li><a href="#">X(Twitter)</a></li>
+                    <li><a href="#">Twitch</a></li>
+                    <li><a href="#">Youtube</a></li>
+                    <li><a href="./Aurorasop.html">Merch</a></li>
+                    <li><a href="#">Discord</a></li>
+                    <li><a href="#">Support</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="hedbox hed2">
+            <h3><i class="fas fa-search"></i></h3>
+            <div class="Search_UI">
+                <div class="search_wrap">
+                    <form action="#" method="get" id="search-form">
+                        <fieldset id="search_field">
+                            <div class="sbarea1">
+                                <input type="search" placeholder="Search" id="search1" required>
+                                <button type="button" class="btn_sbarea" onclick="addRecentSearch()">
+                                    <i class="fas fa-search"></i></button>
+                            </div>
+                            <br>
+                            <div class="sbarea1_invis">
+                                <ul class="recentsearch" id="recent-search-list">
+                                    <!-- js 최근 검색 결과추가-->
+                                    <!-- 전체 삭제 기능 추가 (리스트 하나이상 존재시 보여줌) -->
+                                </ul>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="hedbox hed3">
+            <h3><i class="fa-regular fa-user"></i></h3>
+            <div class="Login_signUp_UI">
+                <div id="login-field">
+                    <fieldset>
+                        <legend>Login</legend>
+                        <div class="LogIn_UI" id="login-ui">
+                            <div class="SILwarp">
+                                <form id="login-form">
+                                    <br>
+                                    <input type="email" id="login-email" placeholder="email" required>
+                                    <br>
+                                    <input type="password" id="login-password" placeholder="pw" required>
+                                    <br>
+                                    <button type="button" onclick="submitLoginForm()">Login</button>
+                                    <button type="button" onclick="showSignup()">SignUp</button>
+
+                                    <p id="login-error" class="error-message"></p>
+                                </form>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+                <div id="signup-field" style="display: none;">
+                    <fieldset>
+                        <legend>Signup</legend>
+                        <div class="Signin_UI" id="signup-ui">
+                            <div class="SignUp_Wrap">
+                                <div class="SignUp_UI">
+                                    <form id="signup-form">
+                                        <input type="text" id="signup-username" placeholder="Username" required>
+                                        <br>
+                                        <input type="email" id="signup-email" placeholder="Email" required>
+                                        <br>
+                                        <input type="password" id="signup-password" placeholder="Password" required>
+                                        <br>
+                                        <input type="password" id="signup-confirm-password"
+                                            placeholder="Confirm Password" required>
+                                        <br>
+                                        <button type="button" onclick="submitSignupForm()">Sign Up</button>
+                                        <button type="button" onclick="showLogin()">Login</button>
+                                        <p id="signup-error" class="error-message"></p>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="./root.css">
+    <style>
+        .tdbtns {
+            position: fixed;
+            bottom: 0px;
+            right: 20px;
+            transform: translateY(-50%);
+            z-index: 4;
+        }
+
+        .moveTopBtn,
+        .moveBottomBtn {
+            border-radius: 50%;
+            color: var(--color_box1);
+            background-color: var(--color_textt1);
+            width: 60px;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            font-size: 20px;
+            margin-bottom: 10px;
+            transition: width 0.3s, height 0.3s, font-size 0.3s;
+        }
+
+        .moveTopBtn:hover,
+        .moveBottomBtn:hover {
+            font-size: 30px;
+            color: var(--color_textt1);
+        }
+    </style>
+</head>
+<body>
+    <div style="width: 2000px; height: 5000px; background: linear-gradient(to bottom, red, rgb(0, 0, 0));">
+        <div class="tdbtns">
+            <div class="moveTopBtn"><i class="fa-solid fa-angles-up"></i></div>
+            <div class="moveBottomBtn"><i class="fa-solid fa-angles-down"></i></div>
+        </div>
+    </div>
+</body>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        document.querySelector(".moveTopBtn").addEventListener("click", function() {
+            window.scroll({
+                top: 0,
+                behavior: "smooth"
+            });
+        });
+        document.querySelector(".moveBottomBtn").addEventListener("click", function() {
+            window.scroll({
+                top: document.body.scrollHeight,
+                behavior: "smooth"
+            });
+        });
+    });
+</script>
+</html>
